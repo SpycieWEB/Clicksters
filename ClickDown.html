@@ -85,10 +85,10 @@
             font-family: 'fantasy', 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
             font-size: 100px;
             color: rgb(255, 255, 255);
-            margin-top: 50px;
-            margin-bottom: 50px;
-            margin-right: 500px;
-            margin-left: 500px;
+            margin-top: 90px;
+            margin-bottom: 100px;
+            margin-right: 40px;
+            margin-left: 40px;
         }
         
         div {
@@ -146,41 +146,43 @@
     </div>
     <div>
         <button type="button" id="button" onclick="onClick()">CLICK</button>
-        <p><a id="clicks">100</a></p>
-    </div>
+        <div>
+            <p id="clicks">100
+            </p>
+        </div>
 
-    <script type="text/javascript">
-        var clicks = 100;
+        <script type="text/javascript">
+            var clicks = 100;
 
-        var audio = new Audio("iPhone ding - sound effect.mp3");
-        var audio1 = new Audio("Button_Plate Click (Minecraft Sound) - Sound Effect for editing(MP3_320K).mp3 ");
+            var audio = new Audio("iPhone ding - sound effect.mp3");
+            var audio1 = new Audio("Button_Plate Click (Minecraft Sound) - Sound Effect for editing(MP3_320K).mp3 ");
 
-        function onClick() {
+            function onClick() {
 
-            clicks -= 1;
-            //audio1.play();
-            audio1.currentTime = 0;
-            document.getElementById("clicks").innerHTML = clicks;
-            if (clicks == 0) {
-                document.getElementById("button").disabled = true;
-                document.body.style.backgroundColor = "lime";
-                audio.play();
+                clicks -= 1;
+                //audio1.play();
+                audio1.currentTime = 0;
+                document.getElementById("clicks").innerHTML = clicks;
+                if (clicks == 0) {
+                    document.getElementById("button").disabled = true;
+                    document.body.style.backgroundColor = "lime";
+                    audio.play();
 
+                }
+            };
+
+            function playSound() {
+                var sound = document.getElementById("audio");
+                sound.play();
             }
-        };
+        </script>
 
-        function playSound() {
-            var sound = document.getElementById("audio");
-            sound.play();
-        }
-    </script>
-
-    <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false"></audio>
-    <script>
-    </script>
-    <div>
-        <a id="Back" href="index.html"> BACK </a>
-    </div>
+        <audio id="audio" src="http://www.soundjay.com/button/beep-07.wav" autoplay="false"></audio>
+        <script>
+        </script>
+        <div>
+            <a id="Back" href="index.html"> BACK </a>
+        </div>
 
 </body>
 
