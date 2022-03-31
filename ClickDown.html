@@ -14,6 +14,10 @@
             changeColor('blue');
 
         }
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+            alert('Right Click is Disabled');
+        }, false);
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,13 +81,14 @@
         }
         
         #clicks {
+            text-align: center;
             font-family: 'fantasy', 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
             font-size: 100px;
             color: rgb(255, 255, 255);
             margin-top: 50px;
             margin-bottom: 50px;
-            margin-right: 400px;
-            margin-left: 400px;
+            margin-right: 500px;
+            margin-left: 500px;
         }
         
         div {
@@ -94,6 +99,12 @@
         
         body {
             background-color: rgb(255, 0, 0);
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #cc0000;
         }
         
         button {
