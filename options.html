@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #New-Game {
+        text-align: center;
+    }
+    
+    #New-Game-css {
+        position: relative;
+        background-color: #ff0000;
+        border: none;
+        font-size: 30px;
+        color: #FFFFFF;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        font-family: fantasy;
+        border-radius: 7%;
+        margin-top: 100px;
+        margin-bottom: 100px
+    }
+    
+    #New-Game-css:after {
+        content: "";
+        background: #ffffff;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px!important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+    }
+    
+    #New-Game-css:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+    }
+</style>
+
+
+</body>
+
+
+<script>
+    function deleteItems() {
+        localStorage.clear();
+
+
+
+
+
+    }
+</script>
+<div id=New-Game>
+    <button id="New-Game-css" onclick="deleteItems() "> Reset </button>
+
+</div>
+
+<h1> In the works</h1>
+</body>
+
+</html>

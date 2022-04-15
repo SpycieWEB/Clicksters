@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function deleteItems() {
+            localStorage.clear();
+
+
+
+
+
+        }
+
+
+        function clickCounter() {
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = localStorage.clickcount;
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+    </script>
+    <meta charset="utf-8">
+    <title>Clicksters_New_Game</title>
+    <style>
+        #Back {
+            background-color: rgb(255, 0, 0);
+            border: none;
+            color: blue;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 40px;
+            margin: 4px 2px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 75px 75px;
+            border-radius: 0%;
+            font-family: fantasy;
+        }
+        
+        #how2 {
+            display: block;
+            margin: 20px 20px;
+            font-size: 20px;
+        }
+        
+        .Home {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #result {
+            font-family: fantasy;
+            font-size: 75px;
+            color: rgb(255, 255, 255);
+        }
+        
+        div {
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            background-color: rgb(255, 0, 0);
+        }
+        
+        button {
+            background-color: rgb(47, 40, 41);
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 65px;
+            margin: 4px 2px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 75px 75px;
+            border-radius: 0%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id=" Home ">
+
+    </div>
+    <div>
+
+        <div id="result "></div>
+
+    </div>
+    <div>
+
+        <button onclick="deleteItems() "> Reset </button>
+        <p id="how2 "> Press reset then press go back to play. Your game will now start over.</p>
+    </div>
+    <div>
+        <a id="Back " href="index.html "> BACK </a>
+    </div>
+</body>
+
+</html>
