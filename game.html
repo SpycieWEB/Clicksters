@@ -68,6 +68,14 @@
         width: 50%;
         margin-top: 50px;
     }
+    
+    #colorChanger1 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 50px;
+    }
 </style>
 
 <div>
@@ -97,12 +105,21 @@
         function colorChange() {
             document.body.style.backgroundColor = "blue";
         };
+
+
+        function colorChange1() {
+            document.body.style.backgroundColor = "lime";
+        };
     </script>
     <a id="Back" href="index.html"><img src="home.png" width="100px" height="100px" /></a>
 
-    <a id="colorChanger" type="button" onclick="colorChange()" width="10px" height="10px"> <img src="PicsArt_04-16-10.18.41.jpg" height="50" width="50" />
-    </a>
+    <div>
+        <a id="colorChanger" type="button" onclick="colorChange()" width="10px" height="10px"> <img src="blue.jpg" height="50" width="50" />
+        </a>
 
+        <a id="colorChanger1" type="button" onclick="colorChange1()" width="10px" height="10px"> <img src="lime.jpg" height="50" width="50" />
+        </a>
 
+    </div>
 
 </html>
