@@ -15,26 +15,24 @@
 <style>
     html {
         text-align: center;
-        background-color: rgb(255, 0, 0);
+        height: max-content;
     }
     
     #Back {
-        background-color: rgb(255, 0, 0);
-        border: none;
-        color: blue;
-        text-align: center;
+        color: rgb(255, 255, 255);
         text-decoration: none;
         display: inline-block;
         font-size: 40px;
-        margin: 4px 2px;
         cursor: pointer;
         display: inline-block;
-        margin: 75px 75px;
         border-radius: 0%;
+        position: fixed;
+        bottom: 1px;
+        right: 1px;
         font-family: 'fantasy', 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
     }
     
-    button {
+    #clickButton {
         padding: 15px 25px;
         font-size: 24px;
         font-family: 'fantasy', 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
@@ -51,7 +49,7 @@
         border-radius: 100px;
     }
     
-    button:active {
+    #clickButton:active {
         background-color: rgb(175, 5, 5);
         box-shadow: 0 7px rgb(36, 36, 36);
         transform: translateY(4px);
@@ -62,30 +60,49 @@
         font-size: 75px;
         color: rgb(0, 0, 0);
     }
+    
+    #colorChanger {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 50px;
+    }
 </style>
 
-<script>
-    var clicks = 0;
+<div>
+    <script>
+        var clicks = 0;
+        document.body.style.backgroundColor = "lime";
 
-    function initiateClicks() {
-        var clickStr = localStorage.getItem("clicks");
-        if (clickStr == undefined) {
-            localStorage.setItem("clicks", 0);
-            clicks = 0;
-        } else {
-            clicks = parseInt(clickStr);
+        function initiateClicks() {
+            var clickStr = localStorage.getItem("clicks");
+            if (clickStr == undefined) {
+                localStorage.setItem("clicks", 0);
+                clicks = 0;
+            } else {
+                clicks = parseInt(clickStr);
+            }
+            document.getElementById("clicks").innerHTML = clicks;
         }
-        document.getElementById("clicks").innerHTML = clicks;
-    }
 
-    function doClick() {
-        clicks += 1;
-        localStorage.setItem("clicks", clicks);
-        document.getElementById("clicks").innerHTML = clicks;
-    }
-    document.getElementById("clickButton").onclick = doClick;
-    initiateClicks();
-</script>
-<a id="Back" href="index.html">Home</a>
+        function doClick() {
+            clicks += 1;
+            localStorage.setItem("clicks", clicks);
+            document.getElementById("clicks").innerHTML = clicks;
+        }
+        document.getElementById("clickButton").onclick = doClick;
+        initiateClicks();
+
+        function colorChange() {
+            document.body.style.backgroundColor = "blue";
+        };
+    </script>
+    <a id="Back" href="index.html"><img src="home.png" width="100px" height="100px" /></a>
+
+    <a id="colorChanger" type="button" onclick="colorChange()" width="10px" height="10px"> <img src="PicsArt_04-16-10.18.41.jpg" height="50" width="50" />
+    </a>
+
+
 
 </html>
