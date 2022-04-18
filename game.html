@@ -19,7 +19,6 @@
     }
     
     #Back {
-        color: rgb(255, 255, 255);
         text-decoration: none;
         display: inline-block;
         font-size: 40px;
@@ -59,67 +58,252 @@
         font-family: 'fantasy', 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
         font-size: 75px;
         color: rgb(0, 0, 0);
-    }
-    
-    #colorChanger {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        margin-top: 50px;
-    }
-    
-    #colorChanger1 {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        margin-top: 50px;
+        -webkit-text-stroke: 1px white;
     }
 </style>
 
-<div>
-    <script>
-        var clicks = 0;
-        document.body.style.backgroundColor = "lime";
 
-        function initiateClicks() {
-            var clickStr = localStorage.getItem("clicks");
-            if (clickStr == undefined) {
-                localStorage.setItem("clicks", 0);
-                clicks = 0;
-            } else {
-                clicks = parseInt(clickStr);
-            }
-            document.getElementById("clicks").innerHTML = clicks;
+<script>
+    var clicks = 0;
+    document.body.style.backgroundColor = "#808080";
+
+    function initiateClicks() {
+        var clickStr = localStorage.getItem("clicks");
+        if (clickStr == undefined) {
+            localStorage.setItem("clicks", 0);
+            clicks = 0;
+        } else {
+            clicks = parseInt(clickStr);
         }
+        document.getElementById("clicks").innerHTML = clicks;
+    }
 
-        function doClick() {
-            clicks += 1;
-            localStorage.setItem("clicks", clicks);
-            document.getElementById("clicks").innerHTML = clicks;
-        }
-        document.getElementById("clickButton").onclick = doClick;
-        initiateClicks();
+    function doClick() {
+        clicks += 1;
+        localStorage.setItem("clicks", clicks);
+        document.getElementById("clicks").innerHTML = clicks;
+    }
+    document.getElementById("clickButton").onclick = doClick;
+    initiateClicks();
 
-        function colorChange() {
-            document.body.style.backgroundColor = "blue";
-        };
+    //blue
+    function colorChange() {
+        document.body.style.backgroundColor = "#0804fc";
+    };
 
+    //lime
+    function colorChange1() {
+        document.body.style.backgroundColor = "#32CD32";
+    };
+    //orange
+    function colorChange2() {
+        document.body.style.backgroundColor = "#FFA500";
+    };
+    //yellow
+    function colorChange3() {
+        document.body.style.backgroundColor = "#FFFF00";
+    };
+    //pink
+    function colorChange4() {
+        document.body.style.backgroundColor = "#FFC0CB";
+    };
+    //red
+    function colorChange5() {
+        document.body.style.backgroundColor = "#FF0000";
+    };
+    //purple
+    function colorChange6() {
+        document.body.style.backgroundColor = "#800080";
 
-        function colorChange1() {
-            document.body.style.backgroundColor = "lime";
-        };
-    </script>
+    };
+
+    //gray
+    function colorChange7() {
+        document.body.style.backgroundColor = "#808080";
+
+    };
+    //teal
+    function colorChange8() {
+        document.body.style.backgroundColor = "#008080";
+
+    };
+    //
+    function random_bg_color() {
+        var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        console.log(bgColor);
+
+        document.body.style.background = bgColor;
+    }
+</script>
+
+<body>
     <a id="Back" href="index.html"><img src="home.png" width="100px" height="100px" /></a>
 
-    <div>
-        <a id="colorChanger" type="button" onclick="colorChange()" width="10px" height="10px"> <img src="blue.jpg" height="50" width="50" />
+
+
+
+
+
+    <!-- Modal -->
+    <style>
+        #settings {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            margin: 15px;
+        }
+        
+        #randomColor {
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            font-size: 10px;
+            float: right;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        /* Modal Content */
+        
+        .modal-content {
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 25%;
+        }
+        /* The Close Button */
+        
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 47px;
+            margin-left: 10px;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .colorChanger {
+            float: left;
+        }
+        
+        .colorChanger1 {
+            float: left;
+        }
+    </style>
+
+    <body>
+
+
+
+        <!-- Trigger/Open The Modal -->
+        <a id="myBtn"><img id="settings" src="Pics/settings.png" width=70px>
         </a>
 
-        <a id="colorChanger1" type="button" onclick="colorChange1()" width="10px" height="10px"> <img src="lime.jpg" height="50" width="50" />
-        </a>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
-    </div>
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <a id="colorChanger" type="button" onclick="colorChange()" width="10px" height="10px"> <img src="Pics/blue.png" height="50" width="50" />
+                </a>
+
+                <a id="colorChanger1" type="button" onclick="colorChange1()" width="10px" height="10px"> <img src="Pics/lime.png" height="50" width="50" />
+                </a>
+
+
+                <a id="colorChanger2" type="button" onclick="colorChange2()" width="10px" height="10px"> <img src="Pics/orange.jpg" height="50" width="50" />
+                </a>
+
+
+                <a id="colorChanger3" type="button" onclick="colorChange3()" width="10px" height="10px"> <img src="Pics/yellow.jpg" height="50" width="50" />
+                </a>
+
+                <a id="colorChanger4" type="button" onclick="colorChange4()" width="10px" height="10px"> <img src="Pics/pink.jpg" height="50" width="50" />
+                </a>
+
+                <a id="colorChanger5" type="button" onclick="colorChange5()" width="10px" height="10px"> <img src="Pics/red.jpg" height="50" width="50" />
+                </a>
+                <a id="colorChanger6" type="button" onclick="colorChange6()" width="10px" height="10px"> <img src="Pics/purple.jpg" height="50" width="50" />
+                </a>
+                <a id="colorChanger7" type="button" onclick="colorChange7()" width="10px" height="10px"> <img src="Pics/gray.jpg" height="50" width="50" />
+                </a>
+
+                <a id="colorChanger8" type="button" onclick="colorChange8()" width="10px" height="10px"> <img src="Pics/teal.jpg" height="50" width="50" />
+                </a>
+
+                <button id="randomColor" onclick="random_bg_color()">random</button>
+
+            </div>
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+
+
+
+            <!--Modal-end-->
+    </body>
+
+
 
 </html>
