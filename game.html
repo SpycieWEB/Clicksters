@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicksters</title>
-</head><button type="button" id="clickButton">Click me</button>
+</head><button onkeydown="return (event.keyCode!=13);" type="button" id="clickButton" tabindex="-1" onclick="onClickCheck()">Click me</button>
 
 <p><a id="clicks">0</a></p>
 
@@ -16,6 +16,16 @@
     html {
         text-align: center;
         height: max-content;
+        user-select: none;
+        /* supported by Chrome and Opera */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
     }
     
     #Back {
@@ -65,6 +75,9 @@
 
 <script>
     var clicks = 0;
+
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
     document.body.style.backgroundColor = "#808080";
 
     function initiateClicks() {
