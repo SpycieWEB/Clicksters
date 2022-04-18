@@ -128,15 +128,6 @@
 
     };
     //
-    function random_bg_color() {
-        var x = Math.floor(Math.random() * 256);
-        var y = Math.floor(Math.random() * 256);
-        var z = Math.floor(Math.random() * 256);
-        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-        console.log(bgColor);
-
-        document.body.style.background = bgColor;
-    }
 </script>
 
 <body>
@@ -151,18 +142,8 @@
     <style>
         #settings {
             position: fixed;
-            bottom: 5px;
-            left: 5px;
-            margin: 15px;
-        }
-        
-        #randomColor {
-            display: inline-block;
-            background-color: white;
-            width: 300px;
-            height: 50px;
-            font-size: 10px;
-            align-items: left;
+            bottom: 15px;
+            left: 15px;
         }
         
         body {
@@ -195,8 +176,9 @@
         /* Modal Content */
         
         .modal-content {
+            background-color: white;
             margin: auto;
-            padding: 20px;
+            padding: 10px;
             border: 1px solid #888;
             width: 25%;
         }
@@ -207,6 +189,7 @@
             float: right;
             font-size: 28px;
             font-weight: bold;
+            margin-bottom: 30px;
         }
         
         .close:hover,
@@ -215,14 +198,6 @@
             text-decoration: none;
             cursor: pointer;
         }
-        
-        .colorChanger {
-            float: left;
-        }
-        
-        .colorChanger1 {
-            float: left;
-        }
     </style>
 
     <body>
@@ -230,7 +205,7 @@
 
 
         <!-- Trigger/Open The Modal -->
-        <a id="myBtn"><img id="settings" src="Pics/settings.png" width=70px>
+        <a id="myBtn"><img id="settings" src="Pics/settings.png" width='70px'>
         </a>
 
         <!-- The Modal -->
@@ -266,11 +241,27 @@
                 <a id="colorChanger8" type="button" onclick="colorChange8()" width="10px" height="10px"> <img src="Pics/teal.jpg" height="50" width="50" />
                 </a>
 
-                <button id="randomColor" onclick="random_bg_color()">random</button>
+                <a onclick="random_bg_color()">
+                    <img src="Pics/random.jpg" height="50" width="50"> </a>
+
 
             </div>
 
             <script>
+                function random_bg_color() {
+                    var x = Math.floor(Math.random() * 256);
+                    var y = Math.floor(Math.random() * 256);
+                    var z = Math.floor(Math.random() * 256);
+                    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+                    console.log(bgColor);
+
+                    document.body.style.background = bgColor;
+                }
+
+
+
+
                 // Get the modal
                 var modal = document.getElementById("myModal");
 
